@@ -25,11 +25,13 @@ int main()
 		}
 		for(int i = 1; i < 4; i++)
 		{
+			cout<<"queue:\t";
 			for(int j = 0; j < 8; j++)
 			{
+				cout<<q[i][j]<<"\t";
 				if(q[i][j] > 0)
 					q[i][j] ++;
-				std::cout<<q[i][j]<<" ";
+				//std::cout<<q[i][j]<<" ";
 			}
 			std::cout<<std::endl;
 		}
@@ -78,6 +80,13 @@ int main()
 				}
 			}
 		}
+		//cout<<"q_num[1]:\t"<<q_num[1]<<endl;
+		q_num[1] = 0;
+		for(int i = 0; i < 3; i++)
+		{
+			if(q[1][i] != 0)
+				q_num[1]++;
+		}
 		for(int i = 0; i < 3; i++)
 		{
 			if(q_num[1] < 3 && q_num[0] > 0)
@@ -89,12 +98,13 @@ int main()
 					q_num[1] ++;
 				}
 			}
+			
 		}
-		std::cout<<q_num[0]<<" "<<q_num[1]<<" "<<q_num[2]<<" "<<q_num[3]<<endl;
+		std::cout<<"queue_1:\t"<<q_num[0]<<"\tqueue_2:\t"<<q_num[1]<<"\tqueue_3:\t"<<q_num[2]<<"\tqueue_4:\t"<<q_num[3]<<endl;
 		if(q_num[0] == 0 && q_num[1] == 0 && q_num[2] == 0 && q_num[3] == 0 && car == 0)
 			break;
 		min ++;	
 	}
-	std::cout<<min<<endl;
+	std::cout<<"total time:\t"<<min<<endl;
 	return 0;
 }
